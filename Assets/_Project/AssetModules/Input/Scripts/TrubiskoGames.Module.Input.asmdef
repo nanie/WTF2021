@@ -1,0 +1,16 @@
+{
+    "name": "TrubiskoGames.Module.Input.asmdef",
+    "rootNamespace": "",
+    "references": [
+        "GUID:52720fdff51e434479977a918deae7cb"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
