@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.albertovosgerau.unitymvcc": "https://github.com/AlbertoVosgerau/UnityMVC-C.git#releases/0.0.3",
+    "com.normalvr.normcore": "2.1.10",
     "com.unity.collab-proxy": "1.15.1",
     "com.unity.feature.development": "1.0.1",
     "com.unity.ide.rider": "3.0.7",
@@ -42,5 +43,15 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "Normal",
+      "url": "https://normcore-registry.normcore.io",
+      "scopes": [
+        "com.normalvr",
+        "io.normcore"
+      ]
+    }
+  ]
 }
