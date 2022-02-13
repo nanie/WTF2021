@@ -1,42 +1,32 @@
-using System;
 using Trubisko.Input;
+using UnityEngine;
 
 namespace UnityMVC.Events
 {
     public partial class WTFPlayerControllerEvents
-    {
-        public Action<View.View> onViewEnabled;
-        public Action<View.View> onViewDisabled;
-        public Action<View.View> onViewDestroyed;
-    }
-}
-
-namespace UnityMVC.Model
-{
-    public class WTFPlayerViewModel : MVCModel
     {
     }
 }
 
 namespace WTF.Player
 {
-    public partial class WTFPlayerView
+    public partial class WTFPlayerMVCComponent
     {
-        WTFPlayerMVCComponent _playerComponent;
+        [SerializeField] private PlayerMovement _playerMovement;
 
         protected override void SolveDependencies()
         {
-            _playerComponent = GetMVCComponent<WTFPlayerMVCComponent>();
+            
         }
         
-        protected override void RegisterControllerEvents()
+        protected override void RegisterEvents()
         {
         }
-
-        protected override void UnregisterControllerEvents()
+        
+        protected override void UnregisterEvents()
         {
         }
-
+        
         protected override void MVCAwake()
         {
         }
@@ -55,7 +45,8 @@ namespace WTF.Player
 
         public void MovePlayer(InputData input)
         {
-            _playerComponent.MovePlayer(input);
+            _playerMovement.MovePlayer(input.HorizontalAxis, input.VerticalAxis, input.Jump);
         }
+
     }
 }

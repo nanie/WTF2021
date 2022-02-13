@@ -1,10 +1,8 @@
 {
-    "name": "TrubiskoGames.WTF.WTFPlayer.asmdef",
+    "name": "TrubiskoGames.Module.Input.asmdef",
     "rootNamespace": "",
     "references": [
-        "GUID:52720fdff51e434479977a918deae7cb",
-        "GUID:77b84e9c38aa3974e8c9c9acd00be8b9",
-        "GUID:6bdc29faf7889314baaacec68c5a474a"
+        "GUID:52720fdff51e434479977a918deae7cb"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,4 +1,7 @@
 using System;
+using Trubisko.Input;
+using UnityMVC;
+using WTF.PlayerInput;
 
 namespace UnityMVC.Events
 {
@@ -13,18 +16,20 @@ namespace WTF.Player
 {
     public partial class WTFPlayerController
     {
-        // MVC properties available: View and Events
-
+        WTFPlayerInputController _playerInputController;
         protected override void SolveDependencies()
         {
+            _playerInputController = MVCApplication.Controllers.Get<WTFPlayerInputController>();
         }
         
         protected override void RegisterEvents()
         {
+            _playerInputController.Events.onInputDataChanged += PlayerInputChanged;
         }
-        
+
         protected override void UnregisterEvents()
         {
+            _playerInputController.Events.onInputDataChanged -= PlayerInputChanged;
         }
 
         protected override void MVCAwake()
@@ -41,6 +46,12 @@ namespace WTF.Player
 
         protected override void MVCUpdate()
         {
+        }
+
+
+        private void PlayerInputChanged(InputData input)
+        {
+            View.MovePlayer(input);
         }
     }
 }

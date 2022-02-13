@@ -1,23 +1,17 @@
-using System;
 using Trubisko.Input;
+using UnityEngine;
 
 namespace UnityMVC.Events
 {
-    public partial class WTFPlayerInputControllerEvents : MVCEvents
+    public partial class WTFPlayerInputControllerEvents
     {
-        public Action<UnityMVC.Controller.Controller> onControllerInitialized;
-        public Action<UnityMVC.Controller.Controller> onControllerDestroyed;
-
-        public Action<InputData> onInputDataChanged;
     }
 }
 
 namespace WTF.PlayerInput
 {
-    public partial class WTFPlayerInputController
+    public partial class WTFPlayerInputMVCComponent
     {
-        // MVC properties available: View and Events
-
         protected override void SolveDependencies()
         {
         }
@@ -29,7 +23,7 @@ namespace WTF.PlayerInput
         protected override void UnregisterEvents()
         {
         }
-
+        
         protected override void MVCAwake()
         {
         }
@@ -44,6 +38,15 @@ namespace WTF.PlayerInput
 
         protected override void MVCUpdate()
         {
+        }
+
+        internal void UpdateData(ref InputData inputData)
+        {
+            inputData.HorizontalAxis = Input.GetAxis("Horizontal");
+            inputData.VerticalAxis = Input.GetAxis("Vertical");
+            inputData.ButtonSkill1 = Input.GetMouseButton(0);
+            inputData.ButtonSkill2 = Input.GetMouseButton(1);
+            inputData.Jump = Input.GetButton("Jump");
         }
     }
 }
