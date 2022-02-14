@@ -13,8 +13,9 @@ namespace WTF.Player
     public partial class WTFPlayerMVCComponent
     {
         [SerializeField] private PlayerMovement _playerMovement;
+        [SerializeField] private PlayerRotation _playerRotation;
 
-        protected override void SolveDependencies()
+    protected override void SolveDependencies()
         {
             
         }
@@ -46,6 +47,7 @@ namespace WTF.Player
         public void MovePlayer(InputData input)
         {
             _playerMovement.MovePlayer(input.HorizontalAxis, input.VerticalAxis, input.Jump);
+            _playerRotation.RotatePlayer(input.mouseDeltaX);
         }
 
     }

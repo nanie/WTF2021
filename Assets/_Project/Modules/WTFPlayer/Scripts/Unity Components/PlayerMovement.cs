@@ -43,13 +43,8 @@ namespace WTF.Player
 
         private void Move(float horizontalAxis, float verticalAxis)
         {
-            Vector3 direction = new Vector3(horizontalAxis, 0f, verticalAxis).normalized;
-
-            if (direction.magnitude >= 0.1f)
-            {
-                Vector3 moveDir = CalculateDirectionBasedOnCamera(direction);
-                _characterController.Move(moveDir.normalized * _speed * Time.deltaTime);
-            }
+            Vector3 move = transform.right * horizontalAxis + transform.forward * verticalAxis;
+            _characterController.Move(move * _speed * Time.deltaTime);
         }
 
         private void ApplyGravity(bool jump)
