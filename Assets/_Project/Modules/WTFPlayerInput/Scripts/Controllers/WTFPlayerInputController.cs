@@ -36,6 +36,7 @@ namespace WTF.PlayerInput
 
         protected override void MVCStart()
         {
+
         }
 
         protected override void MVCLateStart()

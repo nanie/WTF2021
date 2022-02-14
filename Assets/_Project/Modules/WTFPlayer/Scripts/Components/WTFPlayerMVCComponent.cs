@@ -14,20 +14,21 @@ namespace WTF.Player
     {
         [SerializeField] private PlayerMovement _playerMovement;
         [SerializeField] private PlayerRotation _playerRotation;
+        [SerializeField] private Animator _animator;
 
-    protected override void SolveDependencies()
+        protected override void SolveDependencies()
         {
-            
+
         }
-        
+
         protected override void RegisterEvents()
         {
         }
-        
+
         protected override void UnregisterEvents()
         {
         }
-        
+
         protected override void MVCAwake()
         {
         }
@@ -48,6 +49,9 @@ namespace WTF.Player
         {
             _playerMovement.MovePlayer(input.HorizontalAxis, input.VerticalAxis, input.Jump);
             _playerRotation.RotatePlayer(input.mouseDeltaX);
+
+            _animator.SetBool("Jump", input.Jump);
+            _animator.SetFloat("Movement", input.HorizontalAxis > 0 || input.VerticalAxis > 0 ? 1 : 0);
         }
 
     }

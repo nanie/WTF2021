@@ -1,5 +1,6 @@
 using System;
 using Trubisko.Input;
+using UnityEngine;
 
 namespace UnityMVC.Events
 {
@@ -44,6 +45,7 @@ namespace WTF.PlayerInput
 
         protected override void MVCStart()
         {
+            Cursor.visible = false;
         }
 
         protected override void MVCLateStart()

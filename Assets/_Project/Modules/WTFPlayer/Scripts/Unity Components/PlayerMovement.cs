@@ -44,7 +44,7 @@ namespace WTF.Player
         private void Move(float horizontalAxis, float verticalAxis)
         {
             Vector3 move = transform.right * horizontalAxis + transform.forward * verticalAxis;
-            _characterController.Move(move * _speed * Time.deltaTime);
+            _characterController.Move(move * _speed * Time.fixedDeltaTime);
         }
 
         private void ApplyGravity(bool jump)

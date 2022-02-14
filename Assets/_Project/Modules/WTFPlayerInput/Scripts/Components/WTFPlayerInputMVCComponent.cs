@@ -46,7 +46,7 @@ namespace WTF.PlayerInput
             inputData.VerticalAxis = Input.GetAxis("Vertical");
             inputData.ButtonSkill1 = Input.GetMouseButton(0);
             inputData.ButtonSkill2 = Input.GetMouseButton(1);
-            inputData.Jump = Input.GetButton("Jump");
+            inputData.Jump = Input.GetButtonDown("Jump");
             inputData.mouseDeltaX = Input.GetAxis("Mouse X");
             inputData.mouseDeltaY = Input.GetAxis("Mouse Y");
         }
